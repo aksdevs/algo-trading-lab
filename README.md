@@ -33,5 +33,3 @@ Notes
 - Run commands from the repository root so `src` imports resolve.
 - `requirements.txt` is a merged list; pin versions as necessary for your environment.
 - License: see `LICENSE` in the repository root.
-
-If you want a CLI entrypoint or CI configured to run tests automatically, I can add those next.

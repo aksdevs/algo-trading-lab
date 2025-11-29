@@ -1,40 +1,37 @@
-# Algo Trading Lab (Consolidated)
+# Algo Trading Lab
 
-This repository consolidates three projects into a single codebase:
+This repository provides a consolidated algorithmic trading toolkit. Source code is organized under the `src/` package so components can be used together or independently.
 
-- `algo_trading` (core trading engine)
-- `backtesting` (backtesting utilities & visualizations)
-- `etf-arb-sim` (ETF arbitrage simulations)
-
-What I did
-
-- Merged source modules into a single top-level package: `src/`.
-- Created subpackages: `src/data`, `src/backtesting`, `src/strategies`, `src/utils`.
-- Added a merged `requirements.txt` and this consolidated `README.md`.
+Included packages
+- `src/data`: data fetching and preprocessing utilities
+- `src/strategies`: strategy interfaces and example strategies
+- `src/backtesting`: backtesting engine, risk analysis, and visualization helpers
+- `src/utils`: configuration and logging helpers
 
 Quick start
-
-1. Create a virtual environment and install requirements:
+1. Create and activate a virtual environment:
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
+```
+
+2. Install dependencies:
+
+```bash
 pip install -r requirements.txt
 ```
 
-2. Run the main engine (example):
+3. Run tests:
 
 ```bash
-python -c "from src.main import TradingEngine; print('See src/ for entry points')"
+pip install pytest
+pytest -q
 ```
 
 Notes
+- Run commands from the repository root so `src` imports resolve.
+- `requirements.txt` is a merged list; pin versions as necessary for your environment.
+- License: see `LICENSE` in the repository root.
 
-- I preserved most original modules but reorganized them under `src/` so imports like `from src.data...` continue to work.
-- Some files were trimmed for brevity in the visualization modules — they can be expanded back from the original projects if you want full fidelity.
-
-Next steps (suggested)
-
-- Run tests (if any) and fix import issues if they appear.
-- Add a top-level `src/main.py` entrypoint that wires configuration and CLI options.
-- Review and pin package versions in `requirements.txt` to match your deployment environment.
+If you want a CLI entrypoint or CI configured to run tests automatically, I can add those next.

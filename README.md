@@ -75,7 +75,11 @@ with OrderClient(**config) as client:
         print(f"Order filled: {execution.status}")
 ```
 
-See `src/messaging/example_usage.py` for complete examples.
+See `src/messaging/example_usage.py` for complete examples. Run the example with:
+```bash
+PYTHONPATH=. python src/messaging/example_usage.py
+```
+Note: This requires a matching engine to be running at the configured endpoint.
 
 ## Architecture Roadmap
 
